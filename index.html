@@ -251,14 +251,14 @@
               <img src="images/magazine.png" alt="magazine" width="250">
             </div>
             <div class="trends">
-              <h1>HOLLOWEEN ISSUE 2024</h1>
+              <h1>HALLOWEEN ISSUE 2024</h1>
               <button>DOWNLOAD</button>
             </div>
           </div>
           <div class="blog-articles">
             <div class="article">
               <span>01</span>
-              <span>DECORATE YOUR GAME ROOM THIS HOLLOWEEN.</span>
+              <span>DECORATE YOUR GAME ROOM THIS HALLOWEEN.</span>
             </div>
             <div class="article">
               <span>02</span>
@@ -266,7 +266,7 @@
             </div>
             <div class="article">
               <span>03</span>
-              <span>TOP 10 GAMING HOLLOWEEN SET-UPS.</span>
+              <span>TOP 10 GAMING HALLOWEEN SET-UPS.</span>
             </div>
           </div>
         </div>
@@ -288,7 +288,7 @@
       <!-- Footer -->
       <footer class="footer">
         <div class="copyright">
-          <p>Code by Tai Odunaiya &copy; All Rights Reserved 2024. </p>
+          <p>Code by Tai Odunaiya &copy; All Rights Reserved <span id="current-year"></span>. </p>
         </div>
         <div class="brand">
           <i class="fa-solid fa-gamepad"></i>
@@ -298,5 +298,8 @@
       <!-- End of Footer -->
     </div>
     <!-- End of Container -->
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
