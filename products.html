@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME-HUB | Products</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Mukta:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+      .page-hero {
+        width: 100%;
+        height: 35rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1e0772;
+        overflow: hidden;
+      }
+      .page-hero img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+      }
+      .page-hero h1 {
+        position: relative;
+        font-size: 8rem;
+        color: #fff;
+        letter-spacing: 0.5rem;
+        text-align: center;
+      }
+      .page-hero p {
+        position: relative;
+        font-size: 2rem;
+        color: #fff;
+        opacity: 0.8;
+      }
+      .page-hero-content {
+        position: relative;
+        text-align: center;
+      }
+      .category-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 4rem 0 2rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        padding: 1rem 2.5rem;
+        border: 0.1rem solid #2848ff;
+        border-radius: 3rem;
+        background: #fff;
+        color: #2848ff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: 'Mukta', sans-serif;
+      }
+      .tab-btn:hover, .tab-btn.active {
+        background: #2848ff;
+        color: #fff;
+      }
+      .shop-section {
+        padding: 4rem 10%;
+      }
+      .shop-section h2 {
+        font-size: 3rem;
+        color: #1e0772;
+        margin-bottom: 3rem;
+        padding-bottom: 1rem;
+        border-bottom: 0.2rem solid #eaeff3;
+      }
+      .shop-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-start;
+        margin-bottom: 6rem;
+      }
+      .shop-card {
+        width: 28rem;
+        background: #f7f7f7;
+        border-radius: 2rem;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .shop-card:hover {
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.12);
+        background: #fff;
+      }
+      .shop-card .card-icons {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+      .shop-card:hover .card-icons {
+        opacity: 1;
+      }
+      .shop-card .card-icons a {
+        width: 3rem;
+        height: 3rem;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+        color: #1e0772;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .shop-card .card-icons a:hover {
+        background: #2848ff;
+        color: #fff;
+      }
+      .shop-card img {
+        height: 16rem;
+        object-fit: contain;
+        margin-bottom: 2rem;
+      }
+      .shop-card img.img-gaming-pc {
+        height: 20rem;
+        width: auto;
+        max-width: 100%;
+      }
+      .shop-card img.img-gaming-desk {
+        height: 12rem;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      .shop-card img.img-starter-bundle {
+        filter: hue-rotate(30deg);
+      }
+      .shop-card img.img-led-strip-alt {
+        filter: hue-rotate(90deg);
+      }
+      .shop-card img.img-controller-bundle {
+        height: 16rem;
+        width: 12rem;
+        object-fit: contain;
+        filter: hue-rotate(180deg);
+      }
+      .shop-card h3 {
+        font-size: 1.6rem;
+        color: #1e0772;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1rem;
+      }
+      .shop-card .stars i {
+        font-size: 1.4rem;
+        color: #2848ff;
+      }
+      .shop-card .price {
+        font-size: 1.8rem;
+        color: #1e0772;
+        font-weight: 700;
+        margin: 1rem 0;
+      }
+      .add-to-cart {
+        width: 100%;
+        padding: 1rem;
+        background: #2848ff;
+        color: #fff;
+        border: none;
+        border-radius: 3rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        font-family: 'Mukta', sans-serif;
+        transition: all 0.3s;
+        margin-top: 1rem;
+      }
+      .add-to-cart:hover {
+        background: #1e0772;
+      }
+      @media (max-width: 1000px) {
+        .page-hero { height: 28rem; }
+        .page-hero h1 { font-size: 5rem; }
+        .page-hero p { font-size: 1.8rem; }
+        .shop-section { padding: 4rem 5%; }
+        .shop-card {
+          width: calc(50% - 1rem);
+          flex: 1 1 calc(50% - 1rem);
+          max-width: 32rem;
+        }
+        .shop-grid { justify-content: center; }
+        .category-tabs { padding: 3rem 1.5rem 2rem; }
+        .tab-btn { font-size: 1.4rem; padding: 0.8rem 1.8rem; }
+      }
+      @media (max-width: 700px) {
+        .page-hero { height: 22rem; }
+        .page-hero h1 { font-size: 3.5rem; letter-spacing: 0.2rem; }
+        .shop-section h2 { font-size: 2.4rem; }
+        .shop-card {
+          width: 100%;
+          max-width: 36rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .page-hero h1 { font-size: 2.8rem; }
+        .shop-section { padding: 3rem 4%; }
+        .shop-grid { gap: 1.5rem; }
+        .tab-btn {
+          flex: 1 1 calc(50% - 0.5rem);
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-top">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>GAME-HUB</span>
+          </a>
+          <div class="search-bar">
+            <input type="text" placeholder="What are you looking for?" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="user">
+            <a href="cart.html" class="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>$0.00</span>
+            </a>
+            <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          </div>
+        </div>
+        <div class="nav-list">
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>HOME</span>
+          </a>
+          <a href="products.html" style="background-color:#f7f7f7;">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>PRODUCTS</span>
+          </a>
+          <a href="index.html#pricing">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <span>PRICING</span>
+          </a>
+          <a href="blog.html">
+            <i class="fa-brands fa-blogger"></i>
+            <span>BLOG</span>
+          </a>
+          <a href="sales.html">
+            <i class="fa-solid fa-star"></i>
+            <span>SALES</span>
+          </a>
+          <a href="contact.html">
+            <i class="fa-solid fa-message"></i>
+            <span>CONTACT</span>
+          </a>
+        </div>
+      </nav>
+      <!-- End of Navbar -->
+
+      <!-- Hero -->
+      <div class="page-hero">
+        <img src="images/banner-img.jpg" alt="products" />
+        <div class="page-hero-content">
+          <h1>SHOP ALL PRODUCTS</h1>
+          <p>Over 15,000 gaming products</p>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="category-tabs">
+        <button class="tab-btn active">All</button>
+        <button class="tab-btn" onclick="document.getElementById('computers').scrollIntoView({behavior:'smooth'})">Computers</button>
+        <button class="tab-btn" onclick="document.getElementById('chairs').scrollIntoView({behavior:'smooth'})">Gaming Chairs</button>
+        <button class="tab-btn" onclick="document.getElementById('speakers').scrollIntoView({behavior:'smooth'})">Speakers</button>
+        <button class="tab-btn" onclick="document.getElementById('lighting').scrollIntoView({behavior:'smooth'})">Lighting</button>
+        <button class="tab-btn" onclick="document.getElementById('desks').scrollIntoView({behavior:'smooth'})">Gaming Desks</button>
+        <button class="tab-btn" onclick="document.getElementById('accessories').scrollIntoView({behavior:'smooth'})">Accessories</button>
+      </div>
+
+      <!-- Computers -->
+      <section class="shop-section" id="computers">
+        <h2><i class="fa-solid fa-desktop" style="color:#2848ff;margin-right:1rem;"></i>Computers</h2>
+        <div class="shop-grid">
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/pricing-pc.png" alt="PC Bundle" />
+            <h3>PC BUNDLE</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$699.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/gaming_pc.png" alt="Gaming PC" class="img-gaming-pc" />
+            <h3>GAMING PC</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$1,899.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/starter_bundle.png" alt="Starter Bundle" class="img-starter-bundle" />
+            <h3>STARTER BUNDLE</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$449.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gaming Chairs -->
+      <section class="shop-section" id="chairs">
+        <h2><i class="fa-solid fa-chair" style="color:#2848ff;margin-right:1rem;"></i>Gaming Chairs</h2>
+        <div class="shop-grid">
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/pricing-chair.png" alt="Game Chair" />
+            <h3>GAME CHAIR</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$169.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/pricing-couch.png" alt="Gaming Couch" />
+            <h3>GAMING COUCH</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$349.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/pro_gaming_chair.png" alt="Pro Chair" />
+            <h3>PRO GAMING CHAIR</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$279.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Speakers -->
+      <section class="shop-section" id="speakers">
+        <h2><i class="fa-solid fa-volume-high" style="color:#2848ff;margin-right:1rem;"></i>Speakers</h2>
+        <div class="shop-grid">
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/pricing-speakers.png" alt="Speakers" />
+            <h3>SPEAKERS</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$199.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/surround_sound_set.png" alt="Surround Sound" />
+            <h3>SURROUND SOUND SET</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$429.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/compact_speakers.png" alt="Compact Speakers" />
+            <h3>COMPACT SPEAKERS</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$79.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lighting -->
+      <section class="shop-section" id="lighting">
+        <h2><i class="fa-solid fa-lightbulb" style="color:#2848ff;margin-right:1rem;"></i>Lighting</h2>
+        <div class="shop-grid">
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/lighting.png" alt="Lighting" />
+            <h3>LIGHTING</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$59.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/rgb_desk_lamp.png" alt="RGB Lamp" />
+            <h3>RGB DESK LAMP</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$39.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/pricing-lighting.png" alt="LED Strip" class="img-led-strip-alt" />
+            <h3>LED STRIP KIT</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$29.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gaming Desks -->
+      <section class="shop-section" id="desks">
+        <h2><i class="fa-solid fa-table" style="color:#2848ff;margin-right:1rem;"></i>Gaming Desks</h2>
+        <div class="shop-grid">
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/pricing-desk.png" alt="Gaming Desk" class="img-gaming-desk" />
+            <h3>GAMING DESK</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$599.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/desk_chair_combo.png" alt="Desk & Chair" />
+            <h3>DESK & CHAIR COMBO</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$729.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/l_desk.png" alt="L-Shaped Desk" />
+            <h3>L-SHAPED DESK</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$749.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessories -->
+      <section class="shop-section" id="accessories">
+        <h2><i class="fa-solid fa-puzzle-piece" style="color:#2848ff;margin-right:1rem;"></i>Accessories</h2>
+        <div class="shop-grid">
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/gaming_kit.png" alt="Accessories" />
+            <h3>GAMING ACCESSORIES KIT</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$69.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/gameset.png" alt="Game Set" />
+            <h3>FULL GAME SET</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$129.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+          <div class="shop-card">
+            <div class="card-icons">
+              <a href="wishlist.html" title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+              <a href="#" title="Quick View"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+            <img src="images/controller_bundle.png" alt="Controller Bundle" class="img-controller-bundle" />
+            <h3>CONTROLLER BUNDLE</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$139.00</p>
+            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="copyright">
+          <p class="copyright">&copy; <span id="current-year"></span> Website Coded by Tai Odunaiya</p>
+        </div>
+        <div class="brand">
+          <i class="fa-solid fa-gamepad"></i>
+          <h1>GAME-HUB</h1>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

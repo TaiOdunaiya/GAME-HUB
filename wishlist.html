@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME-HUB | Wishlist</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Mukta:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+      .page-title-bar {
+        width: 100%;
+        background: #1e0772;
+        padding: 4rem 10%;
+      }
+      .page-title-bar h1 {
+        font-size: 5rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .wishlist-main {
+        padding: 5rem 10%;
+      }
+      .wishlist-main h2 {
+        font-size: 2.5rem;
+        color: #1e0772;
+        margin-bottom: 3rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.1rem solid #eee;
+      }
+      .wishlist-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-start;
+      }
+      .wish-card {
+        width: 28rem;
+        background: #f7f7f7;
+        border-radius: 2rem;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transition: all 0.3s;
+      }
+      .wish-card:hover {
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.12);
+        background: #fff;
+      }
+      .remove-wish {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #e74c3c;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .remove-wish:hover {
+        transform: scale(1.2);
+      }
+      .wish-card img {
+        height: 15rem;
+        object-fit: contain;
+        margin-bottom: 1.5rem;
+      }
+      .wish-card img.img-gaming-desk {
+        height: 11rem;
+      }
+      .wish-card h3 {
+        font-size: 1.6rem;
+        color: #1e0772;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .wish-card .stars i {
+        font-size: 1.4rem;
+        color: #2848ff;
+      }
+      .wish-card .price {
+        font-size: 2rem;
+        color: #1e0772;
+        font-weight: 700;
+        margin: 1rem 0;
+      }
+      .cart-btn {
+        width: 100%;
+        padding: 1rem;
+        background: #2848ff;
+        color: #fff;
+        border: none;
+        border-radius: 3rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        font-family: 'Mukta', sans-serif;
+        transition: all 0.3s;
+        margin-top: 0.5rem;
+      }
+      .cart-btn:hover {
+        background: #1e0772;
+      }
+      .wishlist-empty {
+        text-align: center;
+        padding: 8rem 0;
+        width: 100%;
+      }
+      .wishlist-empty i {
+        font-size: 8rem;
+        color: #ddd;
+        display: block;
+        margin-bottom: 2rem;
+      }
+      .wishlist-empty h2 {
+        font-size: 3rem;
+        color: #1e0772;
+        margin-bottom: 1rem;
+      }
+      .wishlist-empty p {
+        font-size: 1.7rem;
+        color: #888;
+        margin-bottom: 3rem;
+      }
+      .browse-btn {
+        display: inline-block;
+        padding: 1.2rem 3rem;
+        background: #2848ff;
+        color: #fff;
+        border-radius: 3rem;
+        font-size: 1.6rem;
+        text-decoration: none;
+        font-family: 'Mukta', sans-serif;
+        transition: all 0.3s;
+      }
+      .browse-btn:hover {
+        background: #1e0772;
+      }
+      @media (max-width: 1000px) {
+        .wishlist-main { padding: 5rem 5%; }
+        .page-title-bar { padding: 4rem 5%; }
+        .wish-card {
+          width: calc(50% - 1rem);
+          max-width: 32rem;
+        }
+        .wishlist-grid { justify-content: center; }
+      }
+      @media (max-width: 700px) {
+        .page-title-bar h1 { font-size: 3.5rem; }
+        .wish-card { width: 100%; max-width: 36rem; }
+      }
+      @media (max-width: 480px) {
+        .wishlist-main { padding: 4rem 4%; }
+        .page-title-bar { padding: 3rem 4%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-top">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>GAME-HUB</span>
+          </a>
+          <div class="search-bar">
+            <input type="text" placeholder="What are you looking for?" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="user">
+            <a href="cart.html" class="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>$0.00</span>
+            </a>
+            <a href="wishlist.html" style="color:#2848ff;"><i class="fa-solid fa-heart"></i></a>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          </div>
+        </div>
+        <div class="nav-list">
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>HOME</span>
+          </a>
+          <a href="products.html">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>PRODUCTS</span>
+          </a>
+          <a href="index.html#pricing">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <span>PRICING</span>
+          </a>
+          <a href="blog.html">
+            <i class="fa-brands fa-blogger"></i>
+            <span>BLOG</span>
+          </a>
+          <a href="sales.html">
+            <i class="fa-solid fa-star"></i>
+            <span>SALES</span>
+          </a>
+          <a href="contact.html">
+            <i class="fa-solid fa-message"></i>
+            <span>CONTACT</span>
+          </a>
+        </div>
+      </nav>
+      <!-- End of Navbar -->
+
+      <div class="page-title-bar">
+        <h1><i class="fa-solid fa-heart"></i> My Wishlist</h1>
+      </div>
+
+      <div class="wishlist-main">
+        <h2>Saved Items</h2>
+        <div class="wishlist-grid" id="wishlist-grid">
+
+          <div class="wish-card">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from wishlist"><i class="fa-solid fa-xmark"></i></button>
+            <img src="images/pricing-lighting.png" alt="Lighting" />
+            <h3>LIGHTING KIT</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="price">$59.00</p>
+            <button class="cart-btn" onclick="window.location.href='cart.html'">MOVE TO CART</button>
+          </div>
+
+          <div class="wish-card">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from wishlist"><i class="fa-solid fa-xmark"></i></button>
+            <img src="images/pricing-desk.png" alt="Gaming Desk" class="img-gaming-desk" />
+            <h3>GAMING DESK</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$599.00</p>
+            <button class="cart-btn" onclick="window.location.href='cart.html'">MOVE TO CART</button>
+          </div>
+
+          <div class="wish-card">
+            <button class="remove-wish" onclick="removeWish(this)" title="Remove from wishlist"><i class="fa-solid fa-xmark"></i></button>
+            <img src="images/pricing-pc.png" alt="PC Bundle" />
+            <h3>PC BUNDLE</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="price">$699.00</p>
+            <button class="cart-btn" onclick="window.location.href='cart.html'">MOVE TO CART</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="copyright">
+          <p class="copyright">&copy; <span id="current-year"></span> Website Coded by Tai Odunaiya</p>
+        </div>    
+        <div class="brand">
+          <i class="fa-solid fa-gamepad"></i>
+          <h1>GAME-HUB</h1>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      function removeWish(btn) {
+        btn.closest('.wish-card').remove();
+        const grid = document.getElementById('wishlist-grid');
+        if (!grid.querySelector('.wish-card')) {
+          grid.innerHTML =
+            '<div class="wishlist-empty">' +
+            '<i class="fa-regular fa-heart"></i>' +
+            '<h2>Your wishlist is empty</h2>' +
+            '<p>Save items you love and come back to them later.</p>' +
+            '<a href="products.html" class="browse-btn">BROWSE PRODUCTS</a>' +
+            '</div>';
+        }
+      }
+    </script>
+  </body>
+</html>

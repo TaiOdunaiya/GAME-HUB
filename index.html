@@ -24,46 +24,48 @@
       <!-- Navbar -->
       <nav class="navbar">
         <div class="navbar-top">
-          <div class="logo">
+          <a href="index.html" class="logo">
             <i class="fa-solid fa-gamepad"></i>
             <span>GAME-HUB</span>
-          </div>
+          </a>
           <div class="search-bar">
             <input type="text" placeholder="What are you looking for?" />
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
           <div class="user">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>$0.00</span>
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-user"></i>
+            <a href="cart.html" class="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>$0.00</span>
+            </a>
+            <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
           </div>
         </div>
         <div class="nav-list">
-          <div>
+          <a href="index.html">
             <i class="fa-solid fa-house"></i>
             <span>HOME</span>
-          </div>
-          <div>
+          </a>
+          <a href="products.html">
             <i class="fa-solid fa-gamepad"></i>
             <span>PRODUCTS</span>
-          </div>
-          <div>
+          </a>
+          <a href="index.html#pricing">
             <i class="fa-solid fa-dollar-sign"></i>
             <span>PRICING</span>
-          </div>
-          <div>
+          </a>
+          <a href="blog.html">
             <i class="fa-brands fa-blogger"></i>
             <span>BLOG</span>
-          </div>
-          <div>
+          </a>
+          <a href="sales.html">
             <i class="fa-solid fa-star"></i>
             <span>SALES</span>
-          </div>
-          <div>
+          </a>
+          <a href="contact.html">
             <i class="fa-solid fa-message"></i>
             <span>CONTACT</span>
-          </div>
+          </a>
         </div>
       </nav>
       <!-- End of Navbar -->
@@ -72,10 +74,10 @@
       <section class="landing">
         <div class="landing-bg"></div>
         <div class="banner">
-          <img src="images/banner-img.jpg" class="banner-img" />
+          <img src="images/banner-img.jpg" class="banner-img" alt="Gaming room setup" />
           <h1 class="banner-heading">GAMING FURNITURE</h1>
-          <button class="banner-btn banner-btn-1">GO TO SHOP</button>
-          <button class="banner-btn banner-btn-2">EXPLORE</button>
+          <button class="banner-btn banner-btn-1" onclick="window.location.href='products.html'">GO TO SHOP</button>
+          <button class="banner-btn banner-btn-2" onclick="window.location.href='products.html'">EXPLORE</button>
         </div>
       </section>
       <!-- End of Landing -->
@@ -84,53 +86,53 @@
       <section class="products">
         <div class="products-top">
           <h3>SEARCH OVER</h3>
-          <h2>15000</h2>
+          <h2>15,000</h2>
           <h1>PRODUCTS</h1>
         </div>
         <div class="products-icons">
-          <div class="computer">
-            <img src="images/computer.png" />
+          <a href="products.html#computers">
+            <img src="images/computer.png" alt="Computers" />
             <span>Computers</span>
-          </div>
-          <div class="chair">
-            <img src="images/chair.png" />
+          </a>
+          <a href="products.html#chairs">
+            <img src="images/chair.png" alt="Gaming chairs" />
             <span>Gaming Chairs</span>
-          </div>
-          <div class="speaker">
-            <img src="images/speaker.png" />
+          </a>
+          <a href="products.html#speakers">
+            <img src="images/speaker.png" alt="Speakers" />
             <span>Speakers</span>
-          </div>
-          <div class="light">
-            <img src="images/lamp.png" />
+          </a>
+          <a href="products.html#lighting">
+            <img src="images/lamp.png" alt="Lighting" />
             <span>Lighting</span>
-          </div>
-          <div class="desk">
-            <img src="images/desk-chair.png" />
-            <span>Gaming Desk</span>
-          </div>
-          <div class="assesories">
-            <img src="images/dice.png" />
-            <span>Assesories</span>
-          </div>
+          </a>
+          <a href="products.html#desks">
+            <img src="images/desk-chair.png" alt="Gaming desks" />
+            <span>Gaming Desks</span>
+          </a>
+          <a href="products.html#accessories">
+            <img src="images/dice.png" alt="Accessories" />
+            <span>Accessories</span>
+          </a>
         </div>
       </section>
       <!-- End of Products -->
 
       <!-- Pricing -->
-      <section class="pricing">
+      <section class="pricing" id="pricing">
         <div class="pricing-top">
           <img src="images/gameset.png" alt="game-hub" />
           <div class="pricing-top-content">
             <h1>GET READY FOR CHRISTMAS</h1>
-            <button>ACTUAL TRENDS</button>
+            <button onclick="window.location.href='sales.html'">LATEST TRENDS</button>
           </div>
         </div>
         <div class="pricing-cards">
           <div class="pricing-card">
             <div class="pricing-card-icons">
-              <i class="fa-solid fa-link"></i>
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <a href="products.html#chairs"><i class="fa-solid fa-link"></i></a>
+              <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+              <a href="products.html#chairs"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
             </div>
             <div class="img-wrapper">
               <img src="images/pricing-chair.png" alt="pricing" width="150" />
@@ -143,13 +145,13 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <h4>$150.00</h4>
+            <h4>$169.00</h4>
           </div>
           <div class="pricing-card">
             <div class="pricing-card-icons">
-              <i class="fa-solid fa-link"></i>
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <a href="products.html#chairs"><i class="fa-solid fa-link"></i></a>
+              <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+              <a href="products.html#chairs"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
             </div>
             <div class="img-wrapper">
               <img src="images/pricing-couch.png" alt="pricing" width="250" />
@@ -161,13 +163,13 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-regular fa-star"></i>
             </div>
-            <h4>$300.00</h4>
+            <h4>$349.00</h4>
           </div>
           <div class="pricing-card">
             <div class="pricing-card-icons">
-              <i class="fa-solid fa-link"></i>
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <a href="products.html#lighting"><i class="fa-solid fa-link"></i></a>
+              <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+              <a href="products.html#lighting"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
             </div>
             <div class="img-wrapper">
               <img src="images/pricing-lighting.png" alt="pricing" width="250" />
@@ -184,9 +186,9 @@
           </div>
           <div class="pricing-card">
             <div class="pricing-card-icons">
-              <i class="fa-solid fa-link"></i>
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <a href="products.html#computers"><i class="fa-solid fa-link"></i></a>
+              <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+              <a href="products.html#computers"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
             </div>
             <div class="img-wrapper">
               <img src="images/pricing-pc.png" alt="pricing" width="200" />
@@ -199,13 +201,13 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-regular fa-star"></i>
             </div>
-            <h4>$400.00</h4>
+            <h4>$699.00</h4>
           </div>
           <div class="pricing-card">
             <div class="pricing-card-icons">
-              <i class="fa-solid fa-link"></i>
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <a href="products.html#speakers"><i class="fa-solid fa-link"></i></a>
+              <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+              <a href="products.html#speakers"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
             </div>
             <div class="img-wrapper">
               <img src="images/pricing-speakers.png" alt="pricing" width="200" />
@@ -218,16 +220,16 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <h4>$200.00</h4>
+            <h4>$199.00</h4>
           </div>
           <div class="pricing-card">
             <div class="pricing-card-icons">
-              <i class="fa-solid fa-link"></i>
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <a href="products.html#desks"><i class="fa-solid fa-link"></i></a>
+              <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+              <a href="products.html#desks"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
             </div>
             <div class="img-wrapper">
-              <img src="images/pricing-desk.png" alt="pricing" width="290"/>
+              <img src="images/pricing-desk.png" alt="pricing" width="220"/>
             </div>
             <h3>GAMING DESK</h3>
             <div class="stars">
@@ -237,12 +239,13 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-regular fa-star"></i>
             </div>
-            <h4>$650.00</h4>
+            <h4>$599.00</h4>
           </div>
         </div>
-        <button>GO TO SHOP</button>
+        <button onclick="window.location.href='products.html'">GO TO SHOP</button>
       </section>
       <!-- End of pricing -->
+
       <!-- Blog -->
       <section class="blog">
         <div class="blog-content">
@@ -251,27 +254,28 @@
               <img src="images/magazine.png" alt="magazine" width="250">
             </div>
             <div class="trends">
-              <h1>HALLOWEEN ISSUE 2024</h1>
-              <button>DOWNLOAD</button>
+              <h1>HALLOWEEN ISSUE 2025</h1>
+              <button onclick="window.location.href='blog.html'">DOWNLOAD</button>
             </div>
           </div>
           <div class="blog-articles">
-            <div class="article">
+            <a href="blog.html#article-1" class="article">
               <span>01</span>
               <span>DECORATE YOUR GAME ROOM THIS HALLOWEEN.</span>
-            </div>
-            <div class="article">
+            </a>
+            <a href="blog.html#article-2" class="article">
               <span>02</span>
               <span>SCARY GAMES TO PLAY.</span>
-            </div>
-            <div class="article">
+            </a>
+            <a href="blog.html#article-3" class="article">
               <span>03</span>
-              <span>TOP 10 GAMING HALLOWEEN SET-UPS.</span>
-            </div>
+              <span>TOP 10 GAMING HALLOWEEN SETUPS.</span>
+            </a>
           </div>
         </div>
       </section>
       <!-- End of Blog -->
+
       <!-- Contact -->
       <section class="contact">
         <div class="contact-content">
@@ -279,16 +283,17 @@
             <h2>Subscribe to our newsletter and grab <span>30% OFF</span></h2>
           </div>
           <div class="content-right">
-            <input type="email" placeholder="Your e-mail address...">
-            <button>SIGN UP</button>
+            <input type="email" placeholder="Your email address...">
+            <button onclick="window.location.href='contact.html'">SIGN UP</button>
           </div>
         </div>
       </section>
       <!-- End of Contact -->
+
       <!-- Footer -->
       <footer class="footer">
         <div class="copyright">
-          <p>Code by Tai Odunaiya &copy; All Rights Reserved <span id="current-year"></span>. </p>
+          <p>Code by Tai Odunaiya &copy; All Rights Reserved <span id="current-year"></span>.</p>
         </div>
         <div class="brand">
           <i class="fa-solid fa-gamepad"></i>

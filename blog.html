@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME-HUB | Blog</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Mukta:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+      .blog-hero {
+        width: 100%;
+        background-color: #1e0772;
+        padding: 8rem 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+      }
+      .blog-hero-text h1 {
+        font-size: 7rem;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 2rem;
+      }
+      .blog-hero-text p {
+        font-size: 2rem;
+        color: rgba(255,255,255,0.7);
+        max-width: 50rem;
+        line-height: 1.5;
+      }
+      .blog-hero-img {
+        flex-shrink: 0;
+      }
+      .blog-hero-img img {
+        width: 22rem;
+        filter: drop-shadow(0 2rem 4rem rgba(0,0,0,0.5));
+      }
+      .blog-main {
+        padding: 6rem 10%;
+      }
+      .blog-main h2 {
+        font-size: 3rem;
+        color: #1e0772;
+        margin-bottom: 4rem;
+      }
+      .blog-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+        gap: 3rem;
+        margin-bottom: 6rem;
+      }
+      .blog-card {
+        background: #f7f7f7;
+        border-radius: 2rem;
+        overflow: hidden;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .blog-card:hover {
+        box-shadow: 0 1rem 4rem rgba(0,0,0,0.12);
+        transform: translateY(-0.5rem);
+      }
+      .blog-card-header {
+        background: #2848ff;
+        padding: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .blog-card-header.dark {
+        background: #0b3954;
+      }
+      .blog-card-header.purple {
+        background: #1e0772;
+      }
+      .blog-num {
+        font-size: 6rem;
+        font-weight: 700;
+        color: rgba(255,255,255,0.2);
+        line-height: 1;
+      }
+      .blog-card-header h3 {
+        font-size: 2rem;
+        color: #fff;
+        line-height: 1.3;
+        text-transform: uppercase;
+      }
+      .blog-card-body {
+        padding: 3rem;
+      }
+      .blog-card-body p {
+        font-size: 1.6rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+      .blog-tag {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background: #eaeff3;
+        color: #1e0772;
+        border-radius: 3rem;
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        margin-right: 0.5rem;
+      }
+      .read-more {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #2848ff;
+        color: #fff;
+        border: none;
+        border-radius: 3rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        font-family: 'Mukta', sans-serif;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .read-more:hover {
+        background: #1e0772;
+      }
+      @media (max-width: 1000px) {
+        .blog-hero { padding: 6rem 5%; }
+        .blog-main { padding: 5rem 5%; }
+        .blog-hero-text h1 { font-size: 5rem; }
+      }
+      @media (max-width: 700px) {
+        .blog-hero { flex-direction: column; text-align: center; }
+        .blog-hero-img img { width: 16rem; }
+        .blog-main { padding: 4rem 3%; }
+        .blog-cards { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-top">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>GAME-HUB</span>
+          </a>
+          <div class="search-bar">
+            <input type="text" placeholder="What are you looking for?" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="user">
+            <a href="cart.html" class="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>$0.00</span>
+            </a>
+            <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          </div>
+        </div>
+        <div class="nav-list">
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>HOME</span>
+          </a>
+          <a href="products.html">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>PRODUCTS</span>
+          </a>
+          <a href="index.html#pricing">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <span>PRICING</span>
+          </a>
+          <a href="blog.html" style="background-color:#f7f7f7;">
+            <i class="fa-brands fa-blogger"></i>
+            <span>BLOG</span>
+          </a>
+          <a href="sales.html">
+            <i class="fa-solid fa-star"></i>
+            <span>SALES</span>
+          </a>
+          <a href="contact.html">
+            <i class="fa-solid fa-message"></i>
+            <span>CONTACT</span>
+          </a>
+        </div>
+      </nav>
+      <!-- End of Navbar -->
+
+      <!-- Blog Hero -->
+      <div class="blog-hero">
+        <div class="blog-hero-text">
+          <h1>GAME-HUB BLOG</h1>
+          <p>Tips, setups, and inspiration for the ultimate gaming experience. Stay up to date with the latest gaming trends and reviews.</p>
+        </div>
+        <div class="blog-hero-img">
+          <img src="images/magazine.png" alt="Blog Magazine" />
+        </div>
+      </div>
+
+      <!-- Blog Articles -->
+      <div class="blog-main">
+        <h2>Latest Articles</h2>
+        <div class="blog-cards">
+
+          <!-- Article 1 -->
+          <div class="blog-card" id="article-1">
+            <div class="blog-card-header">
+              <span class="blog-num">01</span>
+              <h3>Decorate Your Game Room This Halloween</h3>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Halloween</span>
+              <span class="blog-tag">Setup</span>
+              <p>Transform your gaming space into a haunted lair with our top Halloween decoration ideas. From LED skull lights to spooky chair covers, we've got everything you need to set the mood this October.</p>
+              <a href="#article-1" class="read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="blog-card" id="article-2">
+            <div class="blog-card-header dark">
+              <span class="blog-num">02</span>
+              <h3>Scary Games to Play</h3>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Gaming</span>
+              <span class="blog-tag">Horror</span>
+              <p>Get your heart pumping with our curated list of the scariest games to play this Halloween season. From psychological thrillers to pure jump-scare horror, these titles will keep you up at night.</p>
+              <a href="#article-2" class="read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="blog-card" id="article-3">
+            <div class="blog-card-header purple">
+              <span class="blog-num">03</span>
+              <h3>Top 10 Gaming Halloween Setups</h3>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Setup</span>
+              <span class="blog-tag">Inspiration</span>
+              <p>We showcased the top 10 most impressive Halloween gaming setups from our community. See how gamers around the world are decking out their battle stations with spooky flair and RGB magic.</p>
+              <a href="#article-3" class="read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="blog-card" id="article-4">
+            <div class="blog-card-header">
+              <span class="blog-num">04</span>
+              <h3>Best Gaming Chairs of 2025</h3>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Review</span>
+              <span class="blog-tag">Chairs</span>
+              <p>We tested over 20 gaming chairs so you don't have to. Find out which ones offer the best lumbar support, build quality, and value for money — from budget picks to premium throne-worthy seats.</p>
+              <a href="#article-4" class="read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="blog-card" id="article-5">
+            <div class="blog-card-header dark">
+              <span class="blog-num">05</span>
+              <h3>How to Set Up the Perfect Gaming Room</h3>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Guide</span>
+              <span class="blog-tag">Setup</span>
+              <p>Whether you're starting from scratch or upgrading your space, our step-by-step guide covers desk placement, monitor positioning, cable management, and the lighting tricks that pros use.</p>
+              <a href="#article-5" class="read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="blog-card" id="article-6">
+            <div class="blog-card-header purple">
+              <span class="blog-num">06</span>
+              <h3>RGB Lighting: How Much Is Too Much?</h3>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Lighting</span>
+              <span class="blog-tag">Tips</span>
+              <p>RGB lighting can take your setup from dull to dynamic — but there's an art to it. We break down the best colour combinations, sync strategies, and when to rein it in for a cleaner aesthetic.</p>
+              <a href="#article-6" class="read-more">Read More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="copyright">
+          <p class="copyright">&copy; <span id="current-year"></span> Website Coded by Tai Odunaiya</p>
+        </div>
+        <div class="brand">
+          <i class="fa-solid fa-gamepad"></i>
+          <h1>GAME-HUB</h1>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

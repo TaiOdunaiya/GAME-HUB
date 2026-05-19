@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME-HUB | Sales</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Mukta:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+      .sales-hero {
+        width: 100%;
+        background: linear-gradient(135deg, #1e0772 0%, #2848ff 100%);
+        padding: 8rem 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+      }
+      .sales-hero-text h1 {
+        font-size: 8rem;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+      .sales-hero-text h2 {
+        font-size: 3rem;
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 2rem;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: #fff;
+        color: #2848ff;
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding: 1rem 3rem;
+        border-radius: 3rem;
+        letter-spacing: 0.2rem;
+      }
+      .sales-timer {
+        text-align: center;
+      }
+      .sales-timer p {
+        font-size: 1.8rem;
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+      }
+      .timer-boxes {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .timer-box {
+        background: rgba(255,255,255,0.15);
+        border: 0.1rem solid rgba(255,255,255,0.3);
+        border-radius: 1rem;
+        padding: 2rem 2.5rem;
+        min-width: 8rem;
+        text-align: center;
+      }
+      .timer-box span:first-child {
+        display: block;
+        font-size: 4rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+      }
+      .timer-box span:last-child {
+        font-size: 1.2rem;
+        color: rgba(255,255,255,0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }
+      .sales-banner {
+        background: #0b3954;
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.8rem;
+        color: #fff;
+        letter-spacing: 0.2rem;
+      }
+      .sales-banner strong {
+        color: #2848ff;
+      }
+      .sales-main {
+        padding: 6rem 10%;
+      }
+      .sales-main h2 {
+        font-size: 3.5rem;
+        color: #1e0772;
+        margin-bottom: 1rem;
+      }
+      .sales-main .subtitle {
+        font-size: 1.7rem;
+        color: #888;
+        margin-bottom: 4rem;
+      }
+      .sales-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-start;
+      }
+      .sale-card {
+        width: 28rem;
+        background: #f7f7f7;
+        border-radius: 2rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .sale-card:hover {
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.12);
+        background: #fff;
+      }
+      .sale-badge {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        background: #2848ff;
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 700;
+        padding: 0.4rem 1.2rem;
+        border-radius: 3rem;
+      }
+      .sale-card img {
+        height: 15rem;
+        object-fit: contain;
+        margin: 2rem 0;
+      }
+      .sale-card h3 {
+        font-size: 1.6rem;
+        color: #1e0772;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .sale-card .stars i {
+        font-size: 1.4rem;
+        color: #2848ff;
+      }
+      .price-row {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 1rem 0;
+      }
+      .old-price {
+        font-size: 1.6rem;
+        color: #aaa;
+        text-decoration: line-through;
+      }
+      .new-price {
+        font-size: 2.2rem;
+        color: #2848ff;
+        font-weight: 700;
+      }
+      .buy-btn {
+        width: 100%;
+        padding: 1rem;
+        background: #2848ff;
+        color: #fff;
+        border: none;
+        border-radius: 3rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        font-family: 'Mukta', sans-serif;
+        transition: all 0.3s;
+        margin-top: 1rem;
+      }
+      .buy-btn:hover {
+        background: #1e0772;
+      }
+      @media (max-width: 1000px) {
+        .sales-hero {
+          padding: 6rem 5%;
+          flex-direction: column;
+          text-align: center;
+        }
+        .sales-main { padding: 5rem 5%; }
+        .sales-hero-text h1 { font-size: 6rem; }
+        .timer-boxes {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .sale-card {
+          width: calc(50% - 1rem);
+          max-width: 32rem;
+        }
+        .sales-grid { justify-content: center; }
+      }
+      @media (max-width: 700px) {
+        .sales-hero-text h1 { font-size: 4.5rem; }
+        .sales-hero-text h2 { font-size: 2.2rem; }
+        .hero-badge { font-size: 2rem; padding: 0.8rem 2rem; }
+        .timer-box {
+          min-width: 6.5rem;
+          padding: 1.5rem 1.8rem;
+        }
+        .timer-box span:first-child { font-size: 3rem; }
+        .sale-card { width: 100%; max-width: 36rem; }
+      }
+      @media (max-width: 480px) {
+        .sales-hero { padding: 5rem 4%; }
+        .sales-main { padding: 4rem 4%; }
+        .sales-hero-text h1 { font-size: 3.5rem; }
+        .sales-banner { font-size: 1.5rem; padding: 1.5rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-top">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>GAME-HUB</span>
+          </a>
+          <div class="search-bar">
+            <input type="text" placeholder="What are you looking for?" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="user">
+            <a href="cart.html" class="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>$0.00</span>
+            </a>
+            <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          </div>
+        </div>
+        <div class="nav-list">
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>HOME</span>
+          </a>
+          <a href="products.html">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>PRODUCTS</span>
+          </a>
+          <a href="index.html#pricing">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <span>PRICING</span>
+          </a>
+          <a href="blog.html">
+            <i class="fa-brands fa-blogger"></i>
+            <span>BLOG</span>
+          </a>
+          <a href="sales.html" style="background-color:#f7f7f7;">
+            <i class="fa-solid fa-star"></i>
+            <span>SALES</span>
+          </a>
+          <a href="contact.html">
+            <i class="fa-solid fa-message"></i>
+            <span>CONTACT</span>
+          </a>
+        </div>
+      </nav>
+      <!-- End of Navbar -->
+
+      <!-- Sales Hero -->
+      <div class="sales-hero">
+        <div class="sales-hero-text">
+          <h1>SALES &amp; DEALS</h1>
+          <h2>Limited Time Offers</h2>
+          <span class="hero-badge">UP TO 40% OFF</span>
+        </div>
+        <div class="sales-timer">
+          <p>Deal ends in</p>
+          <div class="timer-boxes">
+            <div class="timer-box">
+              <span id="hours">12</span>
+              <span>Hours</span>
+            </div>
+            <div class="timer-box">
+              <span id="minutes">00</span>
+              <span>Mins</span>
+            </div>
+            <div class="timer-box">
+              <span id="seconds">00</span>
+              <span>Secs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sales-banner">
+        Use code <strong>GAMEHUB30</strong> at checkout for an extra 30% off all orders over $100
+      </div>
+
+      <!-- Sale Items -->
+      <div class="sales-main">
+        <h2>Flash Sale Items</h2>
+        <p class="subtitle">Prices reduced for today only — don't miss out</p>
+        <div class="sales-grid">
+
+          <div class="sale-card">
+            <span class="sale-badge">-40%</span>
+            <img src="images/pricing-chair.png" alt="Game Chair" />
+            <h3>GAME CHAIR</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price-row">
+              <span class="old-price">$169.00</span>
+              <span class="new-price">$99.00</span>
+            </div>
+            <button class="buy-btn" onclick="window.location.href='cart.html'">BUY NOW</button>
+          </div>
+
+          <div class="sale-card">
+            <span class="sale-badge">-30%</span>
+            <img src="images/pricing-couch.png" alt="Gaming Couch" />
+            <h3>GAMING COUCH</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="price-row">
+              <span class="old-price">$349.00</span>
+              <span class="new-price">$244.00</span>
+            </div>
+            <button class="buy-btn" onclick="window.location.href='cart.html'">BUY NOW</button>
+          </div>
+
+          <div class="sale-card">
+            <span class="sale-badge">-25%</span>
+            <img src="images/pricing-lighting.png" alt="Lighting" />
+            <h3>LIGHTING KIT</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price-row">
+              <span class="old-price">$59.00</span>
+              <span class="new-price">$44.00</span>
+            </div>
+            <button class="buy-btn" onclick="window.location.href='cart.html'">BUY NOW</button>
+          </div>
+
+          <div class="sale-card">
+            <span class="sale-badge">-35%</span>
+            <img src="images/pricing-pc.png" alt="PC Bundle" />
+            <h3>PC BUNDLE</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="price-row">
+              <span class="old-price">$699.00</span>
+              <span class="new-price">$454.00</span>
+            </div>
+            <button class="buy-btn" onclick="window.location.href='cart.html'">BUY NOW</button>
+          </div>
+
+          <div class="sale-card">
+            <span class="sale-badge">-20%</span>
+            <img src="images/pricing-speakers.png" alt="Speakers" />
+            <h3>SPEAKERS</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="price-row">
+              <span class="old-price">$199.00</span>
+              <span class="new-price">$159.00</span>
+            </div>
+            <button class="buy-btn" onclick="window.location.href='cart.html'">BUY NOW</button>
+          </div>
+
+          <div class="sale-card">
+            <span class="sale-badge">-15%</span>
+            <img src="images/pricing-desk.png" alt="Gaming Desk" />
+            <h3>GAMING DESK</h3>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="price-row">
+              <span class="old-price">$599.00</span>
+              <span class="new-price">$509.00</span>
+            </div>
+            <button class="buy-btn" onclick="window.location.href='cart.html'">BUY NOW</button>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="copyright">
+          <p class="copyright">&copy; <span id="current-year"></span> Website Coded by Tai Odunaiya</p>
+        </div>
+        <div class="brand">
+          <i class="fa-solid fa-gamepad"></i>
+          <h1>GAME-HUB</h1>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // countdown timer (12-hour countdown from page load)
+      let totalSeconds = 12 * 3600;
+      function updateTimer() {
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+        document.getElementById('hours').textContent = String(h).padStart(2,'0');
+        document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+        document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+        if (totalSeconds > 0) totalSeconds--;
+      }
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    </script>
+  </body>
+</html>
